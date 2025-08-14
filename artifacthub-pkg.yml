@@ -4,31 +4,31 @@
 #
 # This config can be saved to its default location with:
 #   kwctl scaffold artifacthub > artifacthub-pkg.yml 
-version: 0.1.0
+version: 0.1.1
 name: labels
 displayName: Labels
-createdAt: 2025-08-13T15:15:27.804180575Z
+createdAt: 2025-08-14T15:21:55.033262385Z
 description: A policy that validates labels of Kubernetes' resources
 license: Apache-2.0
 homeURL: https://github.com/kubewarden/labels-policy
 containersImages:
 - name: policy
-  image: ghcr.io/kubewarden/policies/labels:v0.1.0
+  image: ghcr.io/kubewarden/policies/labels:v0.1.1
 keywords:
 - labels
 links:
 - name: policy
-  url: https://github.com/kubewarden/labels-policy/releases/download/v0.1.0/policy.wasm
+  url: https://github.com/kubewarden/labels-policy/releases/download/v0.1.1/policy.wasm
 - name: source
   url: https://github.com/kubewarden/labels-policy
 install: |
   The policy can be obtained using [`kwctl`](https://github.com/kubewarden/kwctl):
   ```console
-  kwctl pull ghcr.io/kubewarden/policies/labels:v0.1.0
+  kwctl pull ghcr.io/kubewarden/policies/labels:v0.1.1
   ```
   Then, generate the policy manifest and tune it to your liking. For example:
   ```console
-  kwctl scaffold manifest -t ClusterAdmissionPolicy registry://ghcr.io/kubewarden/policies/labels:v0.1.0
+  kwctl scaffold manifest -t ClusterAdmissionPolicy registry://ghcr.io/kubewarden/policies/labels:v0.1.1
   ```
 maintainers:
 - name: Kubewarden developers
@@ -72,6 +72,7 @@ annotations:
       - pods
       operations:
       - CREATE
+      - UPDATE
     - apiGroups:
       - ''
       apiVersions:
